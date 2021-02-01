@@ -1,12 +1,42 @@
 <html>
 <head>
     <title>DOM Play</title>
+    <style>
+
+        #clickSpans span{
+            background-color: aqua;
+        }
+
+    </style>
 </head>
 <body>
     <h1>Dom Play Assignment goes here</h1>
-    <p onclick="document.getElementById('target').style.backgroundColor = 'yellow';"><span id="target">Text goes here</span></p>
+    <div id="clickSpans">
+        <p><span>Text goes here</span></p>
+        <p><span>Text goes here</span></p>
+        <p><span>Text goes here</span></p>
+        <p><span>Text goes here</span></p>
+        <p><span>Text goes here</span></p>
+    </div>
     <script>
-        function highlight(el){
+
+        const spans = document.querySelectorAll("#clickSpans span");
+
+        for(const mySpan of spans){
+            mySpan.addEventListenter("click", function(event){
+                if(el.style.backgroundColor == 'yellow'){//color is yellow, change to white
+                    el.style.backgroundColor = 'white';
+                }
+                else{//color is what, change to yellow
+                    el.style.backgroundColor = 'yellow';
+                }
+            });
+        }
+
+
+ //       console.log(spans);
+
+        /*function highlight(el){
             if(el.style.backgroundColor == 'yellow'){//color is yellow, change to white
                 el.style.backgroundColor = 'white';
             }
@@ -14,7 +44,7 @@
                 el.style.backgroundColor = 'yellow';
             }
 
-        }
+        }*/
     </script>
 </body>
 </html>
