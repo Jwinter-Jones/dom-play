@@ -12,11 +12,11 @@
 <body>
     <h1>Dom Play Assignment goes here</h1>
     <div id="clickSpans">
-        <p><span>Text goes here</span></p>
-        <p><span>Text goes here</span></p>
-        <p><span>Text goes here</span></p>
-        <p><span>Text goes here</span></p>
-        <p><span>Text goes here</span></p>
+        <p><span data-actor="hamlet">Hamlet: To be or not to be, that is the question.</span></p>
+        <p><span data-actor="skull">Skull: Don't ask me, I'm only a skull!</span></p>
+        <p><span data-actor="hamlet">Hamlet: What did you say?</span></p>
+        <p><span data-actor="skull">Skull: Nothing. I'm only a figment of your imagination!</span></p>
+        <p><span data-actor="hamlet">Hamlet: Oh good. I thought I was going crazy!</span></p>
     </div>
     <script>
 
@@ -24,19 +24,16 @@
 
         for(const mySpan of spans){
             mySpan.addEventListenter("click", function(event){
-                if(el.style.backgroundColor == 'yellow'){//color is yellow, change to white
-                    el.style.backgroundColor = 'white';
-                }
-                else{//color is what, change to yellow
-                    el.style.backgroundColor = 'yellow';
-                }
+
+                alert(mySpan.dataset.actor);
+
             });
         }
 
 
  //       console.log(spans);
 
-        /*function highlight(el){
+        function highlight(el){
             if(el.style.backgroundColor == 'yellow'){//color is yellow, change to white
                 el.style.backgroundColor = 'white';
             }
@@ -44,7 +41,7 @@
                 el.style.backgroundColor = 'yellow';
             }
 
-        }*/
+        }
     </script>
 </body>
 </html>
